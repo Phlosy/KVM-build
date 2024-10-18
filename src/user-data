@@ -1,0 +1,23 @@
+#cloud-config
+users:
+  - default
+  - name: user
+    lock_passwd: false
+    passwd: $6$rD50U6xDgonZyssD$sJi1zGzu.P8Af0UvoC2jDs5x.OsgXZK8hUqkQGHZZabqy02MKQrQqXV/CwGN7T09wVbgFLVR/QNbN6vS7CI6N.
+    # passwd: reins
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCUKuwu3NfzLRh4QXxuiBLUhgJbs3W6k3Ex8JsvwuWhPXeoCjtRQaNUavdm6sSHBnYryt3RAMveXRggrYQ2Gx/nlS6TKga3R1LnnHX6eMbkq6WsqOKq7x5kBWcCAjQr/x5vxgtibHNMbxuOIAJg2wNmenPpflzdL4dr9R5NObkpZDiwaGHmYlxGspBt1ClfATRPe9K+zXGyo8z8gST/XjkyH0vuyFw8mrbE4nayfOsvDJ3NYvvUY4LLcdjo6Iavf1C6F7iVTJFASOQp6EgYthD3YHdV5mSGAYCtX1aKbt5heL7HpnmSRA2OXTVlEpkFnHEjGMjplpzDcXC3tVgPOW9rD3sGqpUwHdkpLA9vCdLPa2tzfLxRjsZ9+TgOg0uLtf/qEelh25q7lh/ihcCIFzr0JcMczG5KtitkorW/NEAxM2Ly5OP8GuXKj4CVqwg/+JoW107Zp/VzJu9/jJucHmPj095Yz/sCWA+ex8fzZx2yRYVuuvGZLvaL3SOJ0UJ5zfs= node7@node7
+
+#cloud-config
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: true
+
+# runcmd:
+  # - sudo dhclient enp1s0
+
+
